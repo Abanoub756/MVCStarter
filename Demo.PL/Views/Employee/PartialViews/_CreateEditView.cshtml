@@ -1,0 +1,84 @@
+﻿@model EmployeeViewModel
+
+
+@if (Model.ImageName is not null)
+{
+    <div class="form-group">
+        <img src="~/Files/Images/@Model.ImageName" class="rounded" width="40" height="50" />
+        <input asp-for="ImageName" hidden />
+    </div>
+}
+
+<div>
+    <label class="col-form-label" asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" />
+    <span class="text-danger" asp-validation-for="Name"></span>
+</div>
+
+<div>
+    <label class="col-form-label" asp-for="Image"></label>
+    <input class="form-control" asp-for="Image" />
+</div>
+
+<div>
+    <label class="col-form-label" asp-for="Age"></label>
+    <input class="form-control" asp-for="Age" />
+    <span class="text-danger" asp-validation-for="Age"></span>
+</div>
+
+<div>
+    <label class="col-form-label" asp-for="Salary"></label>
+    <input class="form-control" asp-for="Salary" />
+    <span class="text-danger" asp-validation-for="Salary"></span>
+</div>
+
+<div>
+    <label class="col-form-label" asp-for="Address"></label>
+    <input class="form-control" asp-for="Address" />
+    <span class="text-danger" asp-validation-for="Address"></span>
+</div>
+
+<div>
+    <label class="col-form-label" asp-for="Email"></label>
+    <input class="form-control" asp-for="Email" />
+    <span class="text-danger" asp-validation-for="Email"></span>
+</div>
+
+<div>
+    <label class="col-form-label" asp-for="Phone"></label>
+    <input asp-for="Phone" class="form-control"
+           oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+    <span class="text-danger" asp-validation-for="Phone"></span>
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="IsActive"></label>
+    <select class="form-control" asp-for="IsActive">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <span class="text-danger" asp-validation-for="IsActive"></span>
+</div>
+
+<div>
+    <label class="col-form-label" asp-for="HireDate"></label>
+    <input class="form-control" asp-for="HireDate" type="date" />
+    <span class="text-danger" asp-validation-for="HireDate"></span>
+</div>
+
+@*<div>
+        <label class="col-form-label" asp-for="DateOfCreation"></label>
+        <input class="form-control" asp-for="DateOfCreation" type="date" />
+        <span class="text-danger" asp-validation-for="DateOfCreation"></span>
+    </div>*@
+
+<div>
+    <label class="col-form-label" asp-for="DepartmentId"></label>
+    <select class="form-control" asp-for="DepartmentId" asp-items="ViewBag.Department">
+        @if (Model?.DepartmentId == null)
+        {
+            <option value="">-- Select Department --</option>
+        }
+    </select>
+    <span class="text-danger" asp-validation-for="DepartmentId"></span>
+</div>

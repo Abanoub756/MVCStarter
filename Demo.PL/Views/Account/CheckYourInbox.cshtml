@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Check Your Inbox";
+    Layout = "~/Views/Shared/_AuthLayOut.cshtml";
+}
+
+<div class="main-agileinfo">
+    <div class="agileits-top">
+
+        <div class="wthree-text" style="text-align:center;">
+
+            <p style="margin-bottom: 20px;">
+                A password reset link has been sent to your email.
+                <br />Please check your inbox :)
+            </p>
+
+            <p style="margin-top: 20px;">
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+                   target="_blank"
+                   style="color:#fff; text-decoration:underline;">
+                    Go to your Inbox
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+@section _ValidationScriptsPartial {
+    <partial name="_ValidationScriptsPartial" />
+}
